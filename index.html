@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Language Translator</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="logo">
+            <svg class="logo-icon" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="24" cy="24" r="24" fill="#1976d2"/>
+                <path d="M14 32L34 16M34 16H22M34 16V28" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            <span style="font-size:1.3rem;color:#1976d2;font-weight:600;letter-spacing:1px;">TaTU Translate</span>
+        </div>
+        <h1>Language Translator</h1>
+        <div class="input-voice-group">
+            <textarea id="inputText" placeholder="Enter text to translate..."></textarea>
+            <button id="micBtn" title="Speak" aria-label="Speak" class="mic-btn">
+                <svg id="micIcon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="12" cy="12" r="12" fill="#1976d2"/>
+                    <path d="M12 17c1.66 0 3-1.34 3-3V9a3 3 0 0 0-6 0v5c0 1.66 1.34 3 3 3zm5-3v-2h-2v2c0 2.21-1.79 4-4 4s-4-1.79-4-4v-2H7v2c0 2.97 2.16 5.43 5 5.92V21h2v-1.08c2.84-.49 5-2.95 5-5.92z" fill="#fff"/>
+                </svg>
+            </button>
+        </div>
+        <div class="controls">
+            <select id="fromLang">
+                <option value="en">English</option>
+                <option value="es">Spanish</option>
+                <option value="fr">French</option>
+                <option value="de">German</option>
+                <option value="it">Italian</option>
+                <!-- Add more languages as needed -->
+            </select>
+            <span>→</span>
+            <select id="toLang">
+                <option value="es">Spanish</option>
+                <option value="en">English</option>
+                <option value="fr">French</option>
+                <option value="de">German</option>
+                <option value="it">Italian</option>
+                <!-- Add more languages as needed -->
+            </select>
+            <button id="translateBtn">Translate</button>
+        </div>
+        <div id="outputText" class="output"></div>
+        <button id="ttsBtn" title="Listen to translation" class="tts-btn" style="margin-top:10px;display:flex;align-items:center;gap:6px;">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M3 8v4a1 1 0 0 0 1 1h2l3 3V4L6 7H4a1 1 0 0 0-1 1zm13.54 1.23a1 1 0 0 0-1.41 1.41A5.98 5.98 0 0 1 17 13a5.98 5.98 0 0 1-1.87 4.36 1 1 0 1 0 1.41 1.41A7.98 7.98 0 0 0 19 13a7.98 7.98 0 0 0-2.46-5.77z" fill="#1976d2"/>
+            </svg>
+            <span>Listen</span>
+        </button>
+        <div id="historySection" class="history-section">
+            <h3>Translation History</h3>
+            <ul id="historyList"></ul>
+        </div>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>
