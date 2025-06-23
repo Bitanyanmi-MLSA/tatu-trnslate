@@ -172,6 +172,56 @@ button:hover {
     color: #1976d2;
     font-weight: 500;
 }
+.define-section {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 18px 0 8px 0;
+}
+.define-input {
+    flex: 1 1 auto;
+    padding: 8px 12px;
+    border-radius: 6px;
+    border: 1.5px solid #bdbdbd;
+    font-size: 1rem;
+    background: #f8fafc;
+    color: #333;
+    transition: border 0.2s;
+}
+.define-input:focus {
+    border: 1.5px solid #1976d2;
+    outline: none;
+}
+.define-btn {
+    padding: 8px 18px;
+    border-radius: 6px;
+    border: none;
+    font-size: 1rem;
+    background: linear-gradient(90deg, #1976d2 0%, #42a5f5 100%);
+    color: #fff;
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: 0 2px 8px rgba(25, 118, 210, 0.08);
+    transition: background 0.2s, box-shadow 0.2s, transform 0.1s;
+}
+.define-btn:hover {
+    background: linear-gradient(90deg, #1565c0 0%, #1976d2 100%);
+    box-shadow: 0 4px 16px rgba(25, 118, 210, 0.13);
+    transform: translateY(-2px) scale(1.03);
+}
+.define-result {
+    min-height: 32px;
+    background: #fffde7;
+    border: 1.5px solid #ffe082;
+    border-radius: 8px;
+    padding: 10px 14px;
+    font-size: 1.05rem;
+    color: #333;
+    margin-bottom: 10px;
+    margin-top: 0;
+    box-shadow: 0 1px 4px rgba(255, 193, 7, 0.07);
+    transition: background 0.2s, border 0.2s;
+}
 @media (max-width: 600px) {
     .container {
         padding: 18px 6vw 18px 6vw;

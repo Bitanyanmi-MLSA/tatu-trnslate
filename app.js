@@ -106,3 +106,28 @@ function renderHistory() {
         historyList.appendChild(li);
     });
 }
+
+// Word meaning lookup (AI-powered)
+const defineBtn = document.getElementById('defineBtn');
+const defineInput = document.getElementById('defineInput');
+const defineResult = document.getElementById('defineResult');
+defineBtn.addEventListener('click', async function() {
+    const word = defineInput.value.trim();
+    if (!word) {
+        defineResult.textContent = 'Please enter a word.';
+        return;
+    }
+    defineResult.textContent = 'Searching...';
+    try {
+        const response = await fetch('/api/define', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ word })
+        });
+        if (!response.ok) throw new Error('Failed to get definition.');
+        const data = await response.json();
+        defineResult.textContent = data.definition || 'No definition found.';
+    } catch (err) {
+        defineResult.textContent = 'Error: ' + err.message;
+    }
+});
